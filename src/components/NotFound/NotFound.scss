@@ -1,0 +1,52 @@
+@import "../../variables.scss"; // variables dosyasını import et
+
+.notfound-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; // Sayfanın tamamını kapsasın
+  background-color: $primary-color; // Sayfanın tamamına arka plan rengi ekle
+  display: flex;
+  justify-content: center;
+  align-items: center; // Dikey olarak ortala
+}
+
+.notfound-content {
+  background-color: $text-color;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  width: 320px;
+  color: $primary-color;
+  text-align: center; // Yazıları ortalamak için ekle
+
+  h2 {
+    font-size: 2rem; // Diğer h2 etiketlerinin boyutunu sabit tut
+    margin-bottom: 1rem;
+  }
+
+  .notfound-title {
+    font-size: 4rem; // 404 yazısını büyütmek için özel sınıf
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background-color: $secondary-color;
+    color: $text-color;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}

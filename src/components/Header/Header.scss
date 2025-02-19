@@ -1,0 +1,46 @@
+@import "../../variables.scss"; // variables dosyasını import et
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $secondary-color;
+  color: $text-color;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  background-color: $third-color; // Header rengiyle aynı arkaplan
+  color: black;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px; // Yuvarlak köşe
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color; // Hoverda renk değişimi
+    color: black; // Renk değişiminde yazıyı beyaz yapalım
+  }
+}

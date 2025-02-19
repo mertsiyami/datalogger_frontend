@@ -1,0 +1,29 @@
+@import '../../../../variables.scss';
+
+.right-panel {
+    flex-grow: 1; /* Sağ panel tüm geri kalan alanı alacak */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-left: 20px; /* Sidebar ile araya boşluk ekleyelim */
+    //background-color: #2c3e50;
+
+  }
+  
+  .chart-container,
+  .log-list {
+    width: 100%;
+    max-width: 800px; /* Maksimum genişlik ayarı */
+    margin: 0 auto; /* Ortalamayı sağlamak için */
+  }
+  
+
+  .components-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Her iki bileşen arasına boşluk ekler */
+    width: 100%;
+    max-width: 800px; /* Maksimum genişlik */
+  }

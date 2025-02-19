@@ -1,0 +1,25 @@
+.device-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.device-dropdown label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.device-dropdown select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.device-dropdown select:focus {
+  outline: none;
+  border-color: #007bff;
+}
