@@ -15,13 +15,12 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
   const handleSubmit = async () => {
 
     const requestData = {
-      serialNumber: device.serialNumber,
-      caption: device.caption,
+      deviceSerialNumber: device.serialNumber,
+      name: device.name,
       maxHumidity: device.maxHumidity,
       minHumidity: device.minHumidity,
       maxTemperature: device.maxTemperature,
-      minTemperature: device.minTemperature,
-      name : device.name
+      minTemperature: device.minTemperature
     };
 
     try {
@@ -62,7 +61,7 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
         placeholder="Min Temperature"
         value={device.minTemperature}
         onChange={(e) =>
-          setDevice({ ...device, minTemp: e.target.value})
+          setDevice({ ...device, minTemperature: e.target.value})
         }
       />
       <input
@@ -71,7 +70,7 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
         placeholder="Max Temperature"
         value={device.maxTemperature}
         onChange={(e) =>
-          setDevice({ ...device, maxTemp: e.target.value})
+          setDevice({ ...device, maxTemperature: e.target.value})
         }
       />
       <input

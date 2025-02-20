@@ -5,7 +5,7 @@ const deviceService = {
   myDevices: async () => {
     try {
       // My Devices API isteği
-      const response = await apiClient.get('/devices/mydevices');
+      const response = await apiClient.get('/device/mydevices');
       return response.data; // Başarılı yanıtı döndürüyoruz
     } catch (error) {
       throw error; // Hata durumunda hatayı fırlatıyoruz
@@ -16,7 +16,7 @@ const deviceService = {
   assign: async (data) => {
     try {
       // Device Assign API isteği
-      const response = await apiClient.post('/devices/assign', data);
+      const response = await apiClient.post('/device/assign', data);
       return response.data; // Başarılı yanıtı döndürüyoruz
     } catch (error) {
       throw error; // Hata durumunda hatayı fırlatıyoruz
@@ -27,12 +27,24 @@ const deviceService = {
   update: async (data) => {
     try {
       // Device Update API isteği
-      const response = await apiClient.put('/devices', data);
+      const response = await apiClient.put('/device', data);
       return response.data; // Başarılı yanıtı döndürüyoruz
     } catch (error) {
       throw error; // Hata durumunda hatayı fırlatıyoruz
     }
+  },
+
+  getDevices : async () => {
+    try {
+      const response = await apiClient.post('device/getDevices');
+      return response.data.devices
+    }
+    catch(error)
+    {
+      throw error;
+    }
   }
+
 };
 
 export default deviceService;

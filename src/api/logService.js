@@ -5,7 +5,7 @@ const logService = {
   logsByDeviceId: async (deviceId) => {
     try {
       // Logs API isteği
-      const response = await apiClient.get(`/logs/${deviceId}`);
+      const response = await apiClient.post(`/data/logsByDeviceId`,deviceId);
       return response.data; // Başarılı yanıtı döndürüyoruz
     } catch (error) {
       throw error; // Hata durumunda hatayı fırlatıyoruz

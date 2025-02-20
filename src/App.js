@@ -7,6 +7,8 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import NotFound from "./components/NotFound/NotFound"; // NotFound componenti eklendi
 import Dashboard from "./components/Dashboard/Dashboard";
+import PublicRoute from "./components/PublicRoute/PublicRoute";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const App = () => {
   return (
@@ -14,10 +16,18 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NotFound />} /> {/* NotFound route eklendi */}
+        {/* PublicRoute: Kullanıcı giriş yaptıysa Login ve Register’a giremez */}
+        <Route element={<PublicRoute />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        {/* PrivateRoute: Kullanıcı giriş yapmadıysa Dashboard’a giremez */}
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} /> {/* 404 Sayfası */}
       </Routes>
     </Router>
   );

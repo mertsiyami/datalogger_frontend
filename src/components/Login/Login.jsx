@@ -55,8 +55,8 @@ const Login = () => {
       localStorage.setItem('authToken', response.token)
 
       setTimeout(() => {
-        navigate('/dashboard')
-      }, 1000)
+        window.location.href = "/dashboard"
+      }, 500);
 
     }catch(error)
     {

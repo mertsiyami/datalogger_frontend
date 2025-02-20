@@ -44,3 +44,35 @@
     color: black; // Renk değişiminde yazıyı beyaz yapalım
   }
 }
+
+.nav-button-dashboard {
+  background-color: orange; // Header rengiyle aynı arkaplan
+  color: black;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px; // Yuvarlak köşe
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color; // Hoverda renk değişimi
+    color: black; // Renk değişiminde yazıyı beyaz yapalım
+  }
+}
+
+.nav-button-logout {
+  background-color: #c75353; // Header rengiyle aynı arkaplan
+  color: black;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px; // Yuvarlak köşe
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color; // Hoverda renk değişimi
+    color: black; // Renk değişiminde yazıyı beyaz yapalım
+  }
+}

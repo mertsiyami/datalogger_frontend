@@ -1,8 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Link'i import et
 import "./Header.scss";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsAuthenticated(!!token); // Eğer token varsa true yap
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    setIsAuthenticated(false);
+    navigate("/login");
+  };
+
   return (
     <header className="header">
       <h1 className="logo">
@@ -10,6 +26,8 @@ const Header = () => {
       </h1>
       <nav>
         <ul className="nav-links">
+          { !isAuthenticated ? (
+          <>
           <li>
             <Link to="/login">
               <button className="nav-button">Login</button>
@@ -20,6 +38,22 @@ const Header = () => {
               <button className="nav-button">Register</button>
             </Link>
           </li>
+          </>
+          ):
+          (
+          <>
+          <li>
+            <Link to="/dashboard">
+              <button className="nav-button-dashboard">Dashboard</button>
+            </Link>
+          </li>
+          <li>
+            <Link onClick={handleLogout}>
+              <button className="nav-button-logout">Logout</button>
+            </Link>
+          </li>
+          </>
+          )}
         </ul>
       </nav>
     </header>

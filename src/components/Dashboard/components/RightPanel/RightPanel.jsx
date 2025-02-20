@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "../Chart/Chart";
 import LogList from "../LogList/LogList";
 import "./RightPanel.scss";
+import { logService } from "../../../../api";
 
 const RightPanel = ({ selectedDevice }) => {
-  // Statik log verisi
-  const logs = [
-    { temperature: 22.5, humidity: 45, date: "2024-02-19T10:30:00Z" },
-    { temperature: 23.1, humidity: 50, date: "2024-02-19T11:00:00Z" },
-    { temperature: 21.8, humidity: 48, date: "2024-02-19T11:30:00Z" },
-  ];
+  const [logs, setLogs] = useState([]);
+
+  useEffect(() => {
+    if (selectedDevice) {
+      const fetchLogs = async () => {
+        try {
+          const response = await logService.logsByDeviceId({ deviceId: selectedDevice._id });
+          setLogs(response);
+        } catch (error) {
+          console.error("Cihazlar alınırken hata oluştu:", error);
+        }
+      };
+
+      fetchLogs();
+    }
+  }, [selectedDevice]);
 
   return (
     <div className="right-panel">
       <div className="components-container">
-      <h2>{selectedDevice?.name || "No Device Selected"}</h2>
-      <Chart logs={logs} />
-      <LogList logs={logs} />
+        {logs.length > 0 ? (
+          <>
+            <Chart logs={logs} />
+            <LogList logs={logs} />
+          </>
+        ) : (
+          <p className="no-data-message">Henüz log verisi bulunmamaktadır.</p>
+        )}
       </div>
     </div>
   );

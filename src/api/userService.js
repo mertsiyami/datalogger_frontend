@@ -22,6 +22,8 @@ const userService = {
       throw error; // Hata durumunda hatayı fırlatıyoruz
     }
   },
+
+
 };
 
 export default userService;
