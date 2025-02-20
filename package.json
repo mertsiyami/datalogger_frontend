@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "dotenv": "^16.4.7",
@@ -42,8 +38,8 @@
       "last 1 safari version"
     ]
   },
-  "engines":{
-    "node":"22.9.0",
-    "npm" :"10.8.3"
+  "engines": {
+    "node": "22.9.0",
+    "npm": "10.8.3"
   }
 }
