@@ -1,10 +1,10 @@
 import axios from 'axios';
 //require('dotenv').config();
 
-const API_BASE_URL = process.env.REACT_APP_API_URL; // .env dosyasından API base URL alınıyor
+
 // Axios instance oluşturuluyor
 const apiClient = axios.create({
-  baseURL: API_BASE_URL, // Base URL'i belirliyoruz
+  baseURL: process.env.REACT_APP_API_URL, // Base URL'i belirliyoruz
   headers: {
     'Content-Type': 'application/json', // JSON formatında veri gönderileceğini belirtiyoruz
   },
