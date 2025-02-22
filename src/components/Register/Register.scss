@@ -51,7 +51,7 @@
   button {
     width: 100%;
     background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
-    border: none;
+    border: 2px solid #ff994f;
     border-radius: $border-radius;
     cursor: pointer;
     font-size: $font-size-base;
@@ -59,7 +59,15 @@
     &:disabled {
       background: gray;
       cursor: not-allowed;
+      border: 2px solid gray;
     }
+
+    &:hover {
+      background: #fff;
+      border: 2px solid #ff994f
+      
+    }
+    
   }
 
   .redirect {

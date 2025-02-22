@@ -41,10 +41,15 @@ li, a, button {
 button {
   padding: 9px 25px;
   background: linear-gradient(270deg, #ff994f, #fa6d86);
-  border: none;
+  border: 2px solid #ff994f;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  &:hover {
+    background: $background-color;
+    color: #ff994f;
+    border: 2px solid #ff994f;
+  }
 }
 
 
