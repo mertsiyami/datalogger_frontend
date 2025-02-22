@@ -25,9 +25,9 @@
   .toggle-button {
     padding: 10px 20px;
     font-size: 16px;
-    border: 2px solid $secondary-color;
-    background-color: transparent;
-    color: $secondary-color;
+    background: linear-gradient(#ffdad5, #fff7f9);
+    border: 2px solid black;
+    color: $primary-color;
     border-radius: 5px 0 0 5px;  // Sağdaki buton hariç köşeleri yuvarlıyoruz
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -43,8 +43,8 @@
     }
 
     &.active {
-      background-color: $secondary-color;
-      color: white;
+      background: linear-gradient(270deg, #ff994f, #fa6d86);
+      //color: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 

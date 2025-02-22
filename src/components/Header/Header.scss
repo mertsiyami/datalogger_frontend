@@ -32,7 +32,9 @@ li, a, button {
 .nav-links li a {
   transition: all 0.3s ease 0s;
   &:hover {
-    color : #0088a9;
+    background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
+    -webkit-background-clip: text; /* Gradyanı metne uygula */
+    color: transparent; /* Metni saydam yaparak sadece gradyanın görünmesini sağla */
   }
 }
 

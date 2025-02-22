@@ -46,17 +46,21 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
 
   return (
     <div className="device-info">
+      <label for="name"> Device Name</label>
       <input
         type="text"
         name="name"
+        id="name"
         placeholder="Device Name"
         value={device.name}
         onChange={(e) =>
           setDevice({ ...device, name: e.target.value})
         }
       />
+      <label for="minTemp"> Minimum Temperature</label>
       <input
         type="text"
+        id="minTemp"
         name="minTemp"
         placeholder="Min Temperature"
         value={device.minTemperature}
@@ -64,8 +68,10 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
           setDevice({ ...device, minTemperature: e.target.value})
         }
       />
+      <label for="maxTemp"> Maximum Temperature</label>
       <input
         type="text"
+        id="maxTemp"
         name="maxTemp"
         placeholder="Max Temperature"
         value={device.maxTemperature}
@@ -73,18 +79,22 @@ const DevicePreferences = ({ devices, setDevices, initialDevice, setInitialDevic
           setDevice({ ...device, maxTemperature: e.target.value})
         }
       />
+      <label for="minHumidity"> Minimum Humidity</label>
       <input
         type="text"
         name="minHumidity"
+        id="minHumidity"
         placeholder="Min Humidity"
         value={device.minHumidity}
         onChange={(e) =>
           setDevice({ ...device, minHumidity: e.target.value})
         }
       />
+      <label for="maxHumidity"> Maximum Humidity</label>
       <input
         type="text"
         name="maxHumidity"
+        id="maxHumidity"
         placeholder="Max Humidity"
         value={device.maxHumidity}
         onChange={(e) =>
