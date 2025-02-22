@@ -5,21 +5,19 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $secondary-color;
+  color: $primary-color;
 }
 
 .login-form {
   width: 350px;
   padding: 20px;
   margin-top: -150px;  
-  box-shadow: $box-shadow;
+  border:2px solid  rgba(0, 0, 0, 0.5);
+  box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
   border-radius: $border-radius;
   text-align: center;
-  background-color: $primary-color;
+  //background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
 
-  h2 {
-    color: $primary-text-color;
-  }
 
   .input-group {
     margin-bottom: 15px;
@@ -27,7 +25,6 @@
 
     label {
       font-weight: bold;
-      color: $primary-text-color;
       display: block;
       margin-bottom: 5px;
       margin-top: 30px;
@@ -36,14 +33,13 @@
     input {
       width: 100%;
       padding: 8px;
-      border: 3px solid $secondary-color;
+      border: 3px solid #fff;
       border-radius: $border-radius;
       font-size: $font-size-base;
-      color: $secondary-text-color;
+
 
       &:focus {
         outline: none;
-        border-color: $secondary-color-hover;
       }
     }
 
@@ -55,17 +51,11 @@
 
   button {
     width: 100%;
-    padding: 10px;
-    background: $secondary-color;
-    color: $primary-text-color;
+    background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
     border: none;
     border-radius: $border-radius;
     cursor: pointer;
     font-size: $font-size-base;
-
-    &:hover {
-      background: $secondary-color-hover;
-    }
 
     &:disabled {
       background: gray;
@@ -75,12 +65,14 @@
 
   .redirect {
     margin-top: 15px;
-    color: $primary-text-color;
     
     .register-link {
-      color: $secondary-color-hover;
+
       cursor: pointer;
       font-weight: bold;
+      background: #a363aa; /* Gradyan renk geçişi */
+      -webkit-background-clip: text; /* Gradyanı metne uygula */
+      color: transparent;
 
       &:hover {
         text-decoration: underline;
