@@ -35,9 +35,11 @@ const Chart = ({ logs }) => {
   };
 
   return (
+    <div>
+    <h3>Temperature & Humidity Chart</h3>
     <div className="chart-container">
-      <h3>Temperature & Humidity Chart</h3>
       <Line data={data} options={options} />
+    </div>
     </div>
   );
 };

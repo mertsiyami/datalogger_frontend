@@ -1,6 +1,21 @@
 .chart-container {
-  margin-bottom: 20px; /* Chart ile LogList arasına boşluk ekledik */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  canvas {
+    width: 100% !important;  // Canvas'ın genişliğini sınırlıyoruz.
+    height: auto !important;  // Yüksekliği oranına göre ayarlanacak.
+  }
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px; // Başlık ile içerik arasındaki mesafe
 }

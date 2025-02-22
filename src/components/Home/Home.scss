@@ -1,15 +1,18 @@
-@import "../../variables.scss"; // variables dosyasını import et
+@import "../../variables.scss";
 
 .home-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 160px); // Sayfanın yüksekliğinden header ve footer yüksekliğini çıkarıyoruz (header + footer = 160px)
+  justify-content: center;
+  height: calc(100vh - 60px); // Header ve Footer hariç tüm ekranı kaplasın
+  text-align: center;
   background-color: $primary-color;
-  color: $text-color;
+  color: $primary-text-color;
 
   h1 {
-    font-size: 5rem;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 }

@@ -1,37 +1,50 @@
-.log-list {
-  padding: 10px;
-  //background-color: #f4f4f4;
-  border-radius: 8px;
-  margin-top: 100px; /* LogList'in üst kısmına boşluk ekledik */
-}
-.log-item {
-  margin: 10px 0;
-  padding: 10px;
-  //background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: bisque;
-  list-style: none;
-}
-
-.log-item .log-date {
-  font-size: 0.9rem;
-  color: #000;
-}
-
-.log-item .log-details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-  font-size: 1rem;
-  color: #000;
-
-}
-
-.log-item .log-details span {
-  font-weight: bold;
-}
-
 .loglist-title {
   text-align: center;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px; // Başlık ile içerik arasındaki mesafe
+}
+
+.log-list {
+  width: 100%;
+  //max-height: 600px;  // Liste için sabit bir maksimum yükseklik belirledik
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 600px;  // Kaydırılabilir alan için yükseklik belirledik
+    overflow-y: auto;   // Dikey kaydırma ekledik
+  }
+
+  .log-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+      border-bottom: none;  // Son öğenin alt sınırını kaldırıyoruz
+    }
+
+    .log-date {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .log-details {
+      font-size: 14px;
+      color: #333;
+
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
 }

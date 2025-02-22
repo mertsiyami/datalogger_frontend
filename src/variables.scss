@@ -1,8 +1,25 @@
-$primary-color: #CADCFC; // Header ve Login Formunun Arka Planı
-$secondary-color: rgb(164, 187, 235); // Yeni eklenen secondary-color
-$third-color : #7dbddb;
-$text-color: #000; // Açık Beyaz Yazılar
-$button-color: rgb(164, 187, 235);; // Buton Rengi (Turkuaz)
-$error-color: #e74c3c; // Hata Mesajı (Kırmızı)
-$border-radius: 12px;
-$shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+// Genel Renkler
+$primary-color: #24252a; 
+$secondary-color: rgba(0,139,169,1); 
+$secondary-color-hover: rgba(0,139,169,0.8);
+
+
+$background-color: #f8f9fa; // Açık gri, sayfa arka planı
+$primary-text-color: #edf0f1; // Siyahımsı gri, genel yazılar için
+$secondary-text-color: #6c757d; // Açık gri, alt metinler ve pasif elemanlar
+
+
+// Border & Gölgelendirme
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+// Font Ayarları
+$font-family: 'Arial', sans-serif;
+$font-size-base: 16px;
+
+
+
+$dashboard-border-color : #ccc;
+$dashboard-text-color : #333;
+$dashboard-background-color : #fff;

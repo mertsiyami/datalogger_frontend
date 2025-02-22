@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./DeviceInfo.scss";
+import "./DevicePreferences.scss";
 import { deviceService } from "../../../../api";
 import axios from "axios";
 

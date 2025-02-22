@@ -3,8 +3,9 @@ import "./LogList.scss";
 
 const LogList = ({ logs }) => {
   return (
-    <div className="log-list">
+    <div>
       <h3 className="loglist-title">Device Logs</h3>
+      <div className="log-list">
       <ul>
         {logs.map((log, index) => (
           <li key={index} className="log-item">
@@ -22,6 +23,7 @@ const LogList = ({ logs }) => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };

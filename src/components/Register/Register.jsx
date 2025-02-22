@@ -165,7 +165,7 @@ const Register = () => {
           {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}  
           </div>
           <button type="button" onClick={handleRegister}>Sign Up</button>
-          <p className="redirect">Already have an account?{' '} <span onClick={() => navigate('/login')} className=""> Log in here </span> </p>
+          <p className="redirect">Already have an account?{' '} <span onClick={() => navigate('/login')} className="login-link"> Log in here </span> </p>
         </form>
       </div>
     </div>

@@ -4,19 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Header = () => {
-
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     setIsAuthenticated(!!token); // Eğer token varsa true yap
-  }, []);
+  }, []); // Bağımlılığı buraya isAuthenticated olarak değiştirin
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setIsAuthenticated(false);
-    navigate("/login");
+    navigate("/", { replace: true });
+    navigate(0);
   };
 
   return (
@@ -26,36 +26,38 @@ const Header = () => {
       </h1>
       <nav>
         <ul className="nav-links">
-          { !isAuthenticated ? (
-          <>
-          <li>
-            <Link to="/login">
-              <button className="nav-button">Login</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Register">
-              <button className="nav-button">Register</button>
-            </Link>
-          </li>
-          </>
-          ):
-          (
-          <>
-          <li>
-            <Link to="/dashboard">
-              <button className="nav-button-dashboard">Dashboard</button>
-            </Link>
-          </li>
-          <li>
-            <Link onClick={handleLogout}>
-              <button className="nav-button-logout">Logout</button>
-            </Link>
-          </li>
-          </>
+          {!isAuthenticated ? (
+            <>
+              <li>
+                <Link to="/login">
+                  <a>Login</a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
+                  <a>Register</a>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/dashboard">
+                  <a>Dashboard</a>
+                </Link>
+              </li>
+              <li>
+                <Link onClick={handleLogout}>
+                  <a>Logout</a>
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </nav>
+      <Link to="/contact">
+        <button className="nav-button">Contact</button>
+      </Link>
     </header>
   );
 };

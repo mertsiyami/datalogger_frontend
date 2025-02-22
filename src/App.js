@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Layout from "./components/Layout/Layout";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -9,13 +9,15 @@ import NotFound from "./components/NotFound/NotFound"; // NotFound componenti ek
 import Dashboard from "./components/Dashboard/Dashboard";
 import PublicRoute from "./components/PublicRoute/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   return (
     <Router>
-      <Header />
       <Routes>
+        <Route element={<Layout/>}>
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
         {/* PublicRoute: Kullanıcı giriş yaptıysa Login ve Register’a giremez */}
         <Route element={<PublicRoute />}>
           <Route path="/login" element={<Login />} />
@@ -28,6 +30,7 @@ const App = () => {
         </Route>
 
         <Route path="*" element={<NotFound />} /> {/* 404 Sayfası */}
+        </Route>
       </Routes>
     </Router>
   );

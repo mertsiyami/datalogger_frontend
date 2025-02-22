@@ -1,25 +1,37 @@
-.device-dropdown {
+@import '../../../../variables.scss';
+
+.select-container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.device-dropdown label {
-  font-size: 1rem;
-  color: #333;
-}
-
-.device-dropdown select {
-  padding: 8px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
+select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 2px solid $dashboard-border-color;
+  border-radius: 5px;
+  //background-color: #fff;
+  color: $dashboard-text-color;
   cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: $secondary-color;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+    outline: none;
+  }
+
+  option {
+    padding: 10px;
+  }
+
+  option:disabled {
+    color: #bbb;
+  }
 }
 
-.device-dropdown select:focus {
-  outline: none;
-  border-color: #007bff;
+option {
+  font-size: 14px;
 }

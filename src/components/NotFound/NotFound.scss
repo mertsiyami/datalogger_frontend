@@ -13,40 +13,43 @@
 }
 
 .notfound-content {
-  background-color: $text-color;
+  background-color: $secondary-color;
   padding: 2rem;
   border-radius: $border-radius;
-  box-shadow: $shadow;
+  //box-shadow: $shadow;
   width: 320px;
-  color: $primary-color;
+  color: $primary-text-color;
   text-align: center; // Yazıları ortalamak için ekle
 
   h2 {
     font-size: 2rem; // Diğer h2 etiketlerinin boyutunu sabit tut
     margin-bottom: 1rem;
+    background-color: $secondary-color;
   }
 
   .notfound-title {
     font-size: 4rem; // 404 yazısını büyütmek için özel sınıf
     margin-bottom: 1rem;
+    
   }
 
   p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    background-color: $secondary-color;
   }
 
   .back-link {
     display: inline-block;
     padding: 0.7rem 1.5rem;
-    background-color: $secondary-color;
-    color: $text-color;
+    background-color: $primary-color;
+    color: $primary-text-color;
     text-decoration: none;
     border-radius: 50px;
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: darken($secondary-color, 10%);
+      background-color: $secondary-color-hover;
     }
   }
 }
