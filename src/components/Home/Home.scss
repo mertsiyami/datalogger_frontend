@@ -8,11 +8,13 @@
   height: calc(100vh - 60px); // Header ve Footer hariç tüm ekranı kaplasın
   text-align: center;
   background-color: $primary-color;
-  color: $primary-text-color;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 100px;
     font-weight: bold;
     margin-bottom: 20px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
+    -webkit-background-clip: text; /* Gradyanı metne uygula */
+    color: transparent; /* Metni saydam yaparak sadece gradyanın görünmesini sağla */
   }
 }
