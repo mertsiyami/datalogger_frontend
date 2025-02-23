@@ -5,6 +5,10 @@
     justify-content: space-evenly;
     background: linear-gradient(#ffdad5, #fff7f9);
 
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+
     .contact-left{
         display: flex;
         flex-direction: column;
@@ -78,7 +82,9 @@
     }
     .contact-right{
         @media (max-width: 800px) {
-            display: none;
+         margin-top: 50px;   
+         margin-right: 120px;
+         width: 400px;
         }
     }
 
