@@ -25,6 +25,7 @@ apiClient.interceptors.response.use(
     return response; // Yanıt başarılıysa olduğu gibi döndürülür
   },
   (error) => {
+    //console.log(error)
     // Hata durumunda
     if (error.response) {
       const statusCode = error.response.status; // Hata kodu alınır

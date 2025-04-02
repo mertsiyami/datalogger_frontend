@@ -43,6 +43,18 @@ const deviceService = {
     {
       throw error;
     }
+  },
+
+  registerDeviceToUser : async (data) => {
+
+    try {
+      const response = await apiClient.post('/user/addDevice',data);
+      return response.data
+    }
+    catch(error)
+    {
+      throw error;
+    }
   }
 
 };
