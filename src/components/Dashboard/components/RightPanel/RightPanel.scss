@@ -4,6 +4,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: 80%;
   padding: 20px;
   position: relative;
 
@@ -12,14 +13,22 @@
     flex-direction: column;
     gap: 20px;
   }
+  select {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 89%;
+
+  }
 
   .view-toggle-buttons {
     display: flex;
     gap: 0;  // Boşlukları kaldırarak butonları yapıştırıyoruz
     margin-bottom: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;  // Sağ üst köşeye yerleştiriyoruz
   }
 
   .toggle-button {

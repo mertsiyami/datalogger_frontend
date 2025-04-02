@@ -7,7 +7,11 @@
   align-items: center;
   padding: 30px 10%;
   background-color: $primary-color;
+  width: 100%;
+  box-sizing: border-box;
+
 }
+
 
 li, a, button {
   font-weight: 500;
