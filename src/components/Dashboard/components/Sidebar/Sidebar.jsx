@@ -9,7 +9,6 @@ const Sidebar = ({devices, setDevices, selectedDevice, setSelectedDevice}) => {
     <div className="sidebar">
       <DeviceDropDown devices = {devices}  selectedDevice = {selectedDevice} setSelectedDevice = {setSelectedDevice}/>
       {selectedDevice && <DevicePreferences devices = {devices} setDevices = {setDevices} initialDevice={selectedDevice} setInitialDevice = {setSelectedDevice} />}
-      <DeviceRegister devices = {devices} setDevices = {setDevices} />
     </div>
   );
 };

@@ -4,7 +4,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   padding: 20px;
   position: relative;
 
@@ -13,6 +13,23 @@
     flex-direction: column;
     gap: 20px;
   }
+  
+  .controls-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    .device-selector {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .filter-dropdown {
+      min-width: 200px;
+    }
+  }
+  
   select {
     padding: 10px 15px;
     font-size: 14px;
@@ -21,8 +38,17 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    width: 89%;
-
+    width: 100%;
+    
+    &:focus {
+      border-color: $dashboard-border-hover-color;
+      outline: none;
+      box-shadow: 0 0 5px rgba($secondary-color, 0.3);
+    }
+  }
+  
+  .device-select {
+    font-weight: 500;
   }
 
   .view-toggle-buttons {
@@ -56,12 +82,26 @@
       //color: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-
   }
 
-  .no-data-message {
+  .no-data-message, .no-device-message {
     text-align: center;
     color: #888;
     font-size: 14px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+    margin-top: 20px;
+  }
+  
+  .no-device-message {
+    padding: 60px 30px;
+    margin: 40px 0;
+    
+    p {
+      font-size: 18px;
+      color: #666;
+    }
   }
 }

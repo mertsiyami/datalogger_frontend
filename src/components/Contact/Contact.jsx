@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.scss";
 import leftImage from "./assets/arrow_icon.png"
-import rightImage from "./assets/contactusimage.png";
+import rightImage from "./assets/image.png";
 
 const Contact = () => {
   return (

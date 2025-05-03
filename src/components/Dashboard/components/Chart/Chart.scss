@@ -1,21 +1,81 @@
 .chart-container {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
+  position: relative;
+  
   canvas {
-    width: 100% !important;  // Canvas'ın genişliğini sınırlıyoruz.
-    height: auto !important;  // Yüksekliği oranına göre ayarlanacak.
+    width: 100% !important;  // Canvas'ın genişliğini sınırlıyoruz
+    height: auto !important;  // Yüksekliği oranına göre ayarlanacak
+    min-height: 300px !important; // Minimum yükseklik belirleme
+    margin-bottom: 15px; // Döndürülmüş etiketler için daha fazla boşluk
+  }
+
+  h3 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px; // Başlık ile içerik arasındaki mesafe
+  }
+  
+  // Sınır göstergeleri için stil
+  .limit-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    
+    .limit-indicator {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      
+      .limit-line {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        margin-right: 5px;
+        border-top: 2px dashed;
+      }
+      
+      &.max {
+        .limit-line {
+          border-color: rgba(255, 0, 0, 0.7);
+        }
+        .limit-text {
+          color: rgba(255, 0, 0, 0.9);
+          font-weight: 500;
+        }
+      }
+      
+      &.min {
+        .limit-line {
+          border-color: rgba(0, 0, 255, 0.7);
+        }
+        .limit-text {
+          color: rgba(0, 0, 255, 0.9);
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 
-h3 {
-  text-align: center;
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 10px; // Başlık ile içerik arasındaki mesafe
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  
+  @media (min-width: 992px) {
+    flex-direction: row;
+    
+    .chart-container {
+      flex: 1;
+      width: 48%; // Yan yana olduğunda genişlik
+    }
+  }
 }

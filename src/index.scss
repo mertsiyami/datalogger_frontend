@@ -1,20 +1,43 @@
 @import './variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
+/* Reset ve temel stillemeler */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //background-color: $primary-color;
+}
+
+/* Kök HTML elemanları için stiller */
+html, body {
   font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-body{
-  background: linear-gradient(#ffdad5, #fff7f9);
+body {
+  background: $background-color;
+  min-height: 100vh;
+  color: $primary-color;
 }
 
-root {
-  background-color: $secondary-color;
+/* React root div için stiller */
+#root {
+  background-color: transparent;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Erişilebilirlik için temel stiller */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
 
+/* Responsive font-size ayarları */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+}

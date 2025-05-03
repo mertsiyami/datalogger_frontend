@@ -5,9 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); // Header ve Footer hariç tüm ekranı kaplasın
+  height: calc(100vh); // Header ve Footer hariç tüm ekranı kaplasın
   text-align: center;
-  background-color: $primary-color;
+  //background-color: $primary-color;
 
   h1 {
     font-size: 100px;
@@ -17,4 +17,28 @@
     -webkit-background-clip: text; /* Gradyanı metne uygula */
     color: transparent; /* Metni saydam yaparak sadece gradyanın görünmesini sağla */
   }
+}
+
+
+@media (max-width: 768px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh); // Header ve Footer hariç tüm ekranı kaplasın
+    text-align: center;
+    //background-color: $primary-color;
+  
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
+      -webkit-background-clip: text; /* Gradyanı metne uygula */
+      color: transparent; /* Metni saydam yaparak sadece gradyanın görünmesini sağla */
+    }
+  }
+
+
 }

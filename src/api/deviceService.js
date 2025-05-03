@@ -1,4 +1,4 @@
-import apiClient from './serviceHelper'; // apiClient'ı import ediyoruz
+import apiClient from './serviceHelper';
 
 const deviceService = {
   // MyDevices fonksiyonu
@@ -6,20 +6,9 @@ const deviceService = {
     try {
       // My Devices API isteği
       const response = await apiClient.get('/device/mydevices');
-      return response.data; // Başarılı yanıtı döndürüyoruz
+      return response.data;
     } catch (error) {
-      throw error; // Hata durumunda hatayı fırlatıyoruz
-    }
-  },
-
-  // Assign fonksiyonu
-  assign: async (data) => {
-    try {
-      // Device Assign API isteği
-      const response = await apiClient.post('/device/assign', data);
-      return response.data; // Başarılı yanıtı döndürüyoruz
-    } catch (error) {
-      throw error; // Hata durumunda hatayı fırlatıyoruz
+      throw error;
     }
   },
 
@@ -28,35 +17,31 @@ const deviceService = {
     try {
       // Device Update API isteği
       const response = await apiClient.put('/device', data);
-      return response.data; // Başarılı yanıtı döndürüyoruz
+      return response.data;
     } catch (error) {
-      throw error; // Hata durumunda hatayı fırlatıyoruz
-    }
-  },
-
-  getDevices : async () => {
-    try {
-      const response = await apiClient.post('device/getDevices');
-      return response.data.devices
-    }
-    catch(error)
-    {
       throw error;
     }
   },
 
-  registerDeviceToUser : async (data) => {
-
+  // Cihazları getirme fonksiyonu
+  getDevices: async () => {
     try {
-      const response = await apiClient.post('/user/addDevice',data);
-      return response.data
+      const response = await apiClient.post('device/getDevices');
+      return response.data.devices;
+    } catch (error) {
+      throw error;
     }
-    catch(error)
-    {
+  },
+
+  // Cihaz kaydetme fonksiyonu - artık tek bir fonksiyon
+  addDevice: async (data) => {
+    try {
+      const response = await apiClient.post('/user/addDevice', data);
+      return response.data;
+    } catch (error) {
       throw error;
     }
   }
-
 };
 
 export default deviceService;

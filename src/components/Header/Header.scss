@@ -1,31 +1,42 @@
 @import "../../variables.scss";
 
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
-  background-color: $primary-color;
+  padding: 20px 5%;
+  background-color: $background-color;
   width: 100%;
   box-sizing: border-box;
-
+  position: relative;
 }
 
-
-li, a, button {
-  font-weight: 500;
-  font-size: 16px;
-  color: $primary-text-color;
+li, a, button, .nav-link {
+  font-weight: 1000;
+  font-size: 20px;
+  color: $primary-color;
   text-decoration: none;
 }
 
 .logo {
   cursor: pointer;
+  font-size: 24px;
+  z-index: 2;
+  
+  a {
+    font-size: inherit;
+    font-weight: bold;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }
 
-.nav-links{
+.nav-links {
   list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -33,8 +44,9 @@ li, a, button {
   padding: 0px 20px;
 }
 
-.nav-links li a {
+.nav-links li a, .nav-link {
   transition: all 0.3s ease 0s;
+  cursor: pointer;
   &:hover {
     background: linear-gradient(270deg, #ff994f, #fa6d86); /* Gradyan renk geçişi */
     -webkit-background-clip: text; /* Gradyanı metne uygula */
@@ -42,13 +54,36 @@ li, a, button {
   }
 }
 
-button {
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: $primary-text-color;
+}
+
+.contact-button-mobile {
+  display: none;
+}
+
+.nav-button {
   padding: 9px 25px;
   background: linear-gradient(270deg, #ff994f, #fa6d86);
   border: 2px solid #ff994f;
   border-radius: 50px;
+  color: #fff7f9;
+  font-size: 18px;
   cursor: pointer;
-  //transition: all 0.1s ease 0s;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
   &:hover {
     background: $background-color;
     color: #ff994f;
@@ -56,4 +91,93 @@ button {
   }
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 5%;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $primary-color;
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 1;
 
+    // Eklenen yeni stil - mobil menüdeki linklerin rengi
+    .nav-links li a, .nav-link {
+      color: white; // veya $primary-text-color da kullanabilirsiniz
+      font-size: 18px; // Daha büyük font boyutu
+      padding: 15px 0; // Daha büyük tıklama alanı
+      display: block; // Tam satırı kaplasın
+      &:hover {
+        background: linear-gradient(270deg, #ff994f, #fa6d86);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+
+  }
+  
+  .nav.active {
+    left: 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .contact-button-desktop {
+    display: none;
+  }
+
+  
+  .contact-button-mobile {
+    display: block;
+    margin-top: 20px;
+
+    a {
+      display: inline-block;
+      padding: 10px 25px;
+      width: 50% !important;
+      margin: auto !important;
+      background: linear-gradient(270deg, #ff994f, #fa6d86);
+      border-radius: 50px;
+      
+      &:hover {
+        background: transparent;
+        color: #ff994f;
+        border: 2px solid #ff994f;
+      }
+    }
+  }
+}

@@ -4,12 +4,18 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  //background-color: $primary-color; // Tüm uygulama için arkaplan rengi
 }
 
 .main-content {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+  
+  /* Mobil cihazlar için padding ayarı */
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 }

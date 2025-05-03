@@ -1,5 +1,4 @@
-import Sidebar from "./components/Sidebar/Sidebar";
-import RightPanel from "./components/RightPanel/RightPanel"
+import RightPanel from "./components/RightPanel/RightPanel";
 import { deviceService } from "../../api";
 import "./Dashboard.scss";
 import { useState, useEffect } from "react";
@@ -21,16 +20,13 @@ const Dashboard = () => {
     fetchDevices();
   }, []); // Sayfa ilk açıldığında çalışır
 
-
   return (
     <div className="dashboard">
-      <Sidebar
+      <RightPanel 
         devices={devices}
-        setDevices={setDevices}
         selectedDevice={selectedDevice}
         setSelectedDevice={setSelectedDevice}
       />
-      <RightPanel selectedDevice={selectedDevice} />
     </div>
   );
 };
